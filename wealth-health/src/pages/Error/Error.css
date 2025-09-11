@@ -1,0 +1,132 @@
+.hero-not-found {
+  background-image: url("../../assets/image/lost.jpg");
+  background-position: 60% 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.hero-not-found-content {
+  position: absolute;
+  left: 40px;
+  top: 200px;
+  width: 500px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+  margin: 0 auto;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.hero-not-found-content .title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: red;
+  margin: 0;
+}
+
+.hero-not-found-content .text {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.hero-not-found-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+.hero-not-found-link:hover {
+  text-decoration: underline;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 992px) {
+  .hero-not-found {
+    min-height: 90vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-not-found {
+    background-position: center;
+    min-height: 81.8vh;
+  }
+
+  .hero-not-found .hero-not-found-content {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 60px;
+    width: 80%;
+  }
+
+  .hero-not-found .hero-not-found-content .title {
+    font-size: 1.2rem;
+    color: red;
+  }
+
+  .hero-not-found .hero-not-found-content .text {
+    font-size: 1rem;
+  }
+
+  .hero-not-found .hero-not-found-link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-not-found {
+    background-position: center;
+    min-height: 81vh;
+  }
+
+  .hero-not-found-content {
+    width: 70%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+  }
+}
