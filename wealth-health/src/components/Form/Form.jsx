@@ -5,7 +5,7 @@ import { addEmployee, selEmployees } from "../../features/newEmploye/newEmployee
 import DatePicker from "react-datepicker";
 import { Modal } from "hrnet-wealth-modal";
 import moment from "moment";
-import "./form.css";
+import "./Form.css";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
 import { listesStates } from "../../Moks/states";

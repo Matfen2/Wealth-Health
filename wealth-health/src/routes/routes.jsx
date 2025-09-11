@@ -4,13 +4,11 @@ import { Routes, Route} from "react-router-dom";
 import Header from "../components/Header/Header.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 
-// Split de code
 const Home = lazy(() => import("../pages/Home/Home.jsx"));
 const CreateEmployee = lazy(() => import("../pages/CreateEmployee/CreateEmployee.jsx"));
 const ListeEmployee = lazy(() => import("../pages/ListEmployee/ListEmployee.jsx"));
 const Error = lazy(() => import("../pages/Error/Error.jsx"));
 
-// Styles des liens (évite des recréations à chaque render)
 const navStyle = { textDecoration: "none" };
 
 export default function AppRoutes() {
