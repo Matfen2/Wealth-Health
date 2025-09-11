@@ -1,7 +1,7 @@
 /*eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addEmployee, selEmployees } from "../../features/newEmploye/newEmployeeSlice"; // <-- utilise le selector exporté
+import { addEmployee, selEmployees } from "../../features/newEmploye/newEmployeeSlice"; 
 import DatePicker from "react-datepicker";
 import { Modal } from "hrnet-wealth-modal";
 import moment from "moment";
@@ -14,8 +14,7 @@ import { listesDepartement } from "../../Moks/departements";
 const Form = () => {
   const dispatch = useDispatch();
 
-  // bonne source de vérité : le selector exporté par le slice
-  const employees = useSelector(selEmployees); // <- pas arrayEmployee
+  const employees = useSelector(selEmployees); 
 
   const initialValues = {
     firstname: "",
@@ -57,7 +56,6 @@ const Form = () => {
     setFormErrors((e) => ({ ...e, startdate: "" }));
   };
 
-  // react-select -> onChange(option) et non (data.name)
   const handleSelectState = (option) => {
     setSelectedOptionsState(option);
     setFormValues((s) => ({ ...s, countrystate: option?.value || "" }));
