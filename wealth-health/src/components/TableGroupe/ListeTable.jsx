@@ -99,16 +99,10 @@ export default function ListeTable() {
               </span>
             </div>
             <div className="buttons">
-              <button
-                onClick={() => table.setPageIndex(0)}
-                disabled={!table.getCanPreviousPage()}
-              >
+              <button onClick={() => table.setPageIndex(0)} disabled={!table.getCanPreviousPage()}>
                 {"<<"}
               </button>
-              <button
-                onClick={table.previousPage}
-                disabled={!table.getCanPreviousPage()}
-              >
+              <button onClick={table.previousPage} disabled={!table.getCanPreviousPage()}>
                 Previous
               </button>
               <button onClick={table.nextPage} disabled={!table.getCanNextPage()}>

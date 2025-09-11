@@ -1,25 +1,31 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import CreateEmployee from "../pages/CreateEmployee/CreateEmployee";
-import ListeEmployee from "../pages/ListEmployee/ListEmployee";
-import Error from "../pages/Error/Error";
-import Home from "../pages/Home/Home"
+import { lazy, Suspense } from "react";
+import { Routes, Route} from "react-router-dom";
 
-function App() {
+import Header from "../components/Header/Header.jsx";
+import Footer from "../components/Footer/Footer.jsx";
+
+// Split de code
+const Home = lazy(() => import("../pages/Home/Home.jsx"));
+const CreateEmployee = lazy(() => import("../pages/CreateEmployee/CreateEmployee.jsx"));
+const ListeEmployee = lazy(() => import("../pages/ListEmployee/ListEmployee.jsx"));
+const Error = lazy(() => import("../pages/Error/Error.jsx"));
+
+// Styles des liens (évite des recréations à chaque render)
+const navStyle = { textDecoration: "none" };
+
+export default function AppRoutes() {
   return (
-    <BrowserRouter>
+    <>
       <Header />
-      <section className="elementsToDisplay">
+      <Suspense fallback={<main style={{ padding: 24 }}>Loading…</main>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<CreateEmployee />} />
           <Route path="/list" element={<ListeEmployee />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </section>
+      </Suspense>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
-export default App;

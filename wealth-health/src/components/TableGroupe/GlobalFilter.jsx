@@ -1,25 +1,23 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
-export default function GlobalFilter({ value, onChange, delay = 180 }) {
-  const [local, setLocal] = useState(value || "");
+function GlobalFilterBase({ value, onChange, placeholder = "Filter employees…" }) {
+  const [v, setV] = useState(value ?? "");
 
-  useEffect(() => setLocal(value || ""), [value]);
+  useEffect(() => setV(value ?? ""), [value]);
 
   useEffect(() => {
-    const id = setTimeout(() => onChange(local || undefined), delay);
-    return () => clearTimeout(id);
-  }, [local, delay, onChange]);
+    const t = setTimeout(() => onChange(v), 200);
+    return () => clearTimeout(t);
+  }, [v, onChange]);
 
   return (
-    <>
-      <label className="lbl">Search:</label>
-      <input
-        className="inp"
-        value={local}
-        onChange={(e) => setLocal(e.target.value)}
-        placeholder="Filter employees…"
-        aria-label="Filter employees"
-      />
-    </>
+    <input
+      aria-label="Search"
+      placeholder={placeholder}
+      value={v}
+      onChange={(e) => setV(e.target.value)}
+      style={{ width: 260 }}
+    />
   );
 }
+export default memo(GlobalFilterBase);
